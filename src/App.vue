@@ -1,32 +1,41 @@
 <template>
-  <div id="app">
-    <img
-      alt="Vue logo"
-      class="mx-auto"
-      src="./assets/logo.png"
-    >
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div
+    id="app"
+    class="container mx-auto"
+  >
+    <div class="flex flex-row justify-end">
+      <button
+        v-for="(item, index) in menuItems"
+        :key="index"
+        class="myBtn"
+      >
+        {{ item }}
+      </button>
+    </div>
+    <button onclick="">
+      Button
+    </button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data () {
+    return {
+      menuItems: [
+        'Home',
+        'About',
+        'Experience',
+        'Resume',
+        'Contact'
+      ]
+    }
   }
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.myBtn {
 }
 </style>
