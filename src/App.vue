@@ -16,7 +16,7 @@
     <v-content class="px-4 bg-gray-100 mb-5">
       <div class="flex flex-row my-wrap">
         <!--Articles-->
-        <div class="flex-grow overflow-auto pirates-scroll">
+        <div class="flex-grow overflow-x-auto overflow-y-hidden pirates-scroll">
           <!--Row-->
           <div>
             <!--Title-->
@@ -25,7 +25,7 @@
             </h1>
 
             <!--Content Holder-->
-            <div class="flex flex-row flex-no-wrap overflow-x-auto pirates-scroll mr-5">
+            <div class="flex flex-row flex-no-wrap overflow-x-auto overflow-y-hidden pirates-scroll mr-5">
               <!--Content-->
               <HeadlineCard
                 v-for="card in cards.recent"
@@ -46,7 +46,7 @@
             </h1>
 
             <!--Content Holder-->
-            <div class="flex flex-row flex-no-wrap overflow-x-auto pirates-scrol mr-5">
+            <div class="flex flex-row flex-no-wrap overflow-x-auto overflow-y-hidden pirates-scrol mr-5">
               <!--Content-->
               <HeadlineCard
                 v-for="card in reverse"

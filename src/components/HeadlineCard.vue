@@ -50,10 +50,10 @@ export default {
 .oop {
   background: linear-gradient(
     0deg,
-    var(--pirate-gold) 15%,
+    var(--pirate-black) 15%,
     white 15%,
     white 85%,
-    var(--pirate-black) 85%
+    var(--pirate-gold) 85%
   ) !important;
   border-radius: 2px;
 }
