@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'PirateFont';
+  src: url('fonts/Trajanusbricks-0Wllr.ttf'); /* IE9 Compat Modes */
+}
+
+:root {
+  --pirate-gold: #FDB827;
+  --pirate-black: #27251F;
+}

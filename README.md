@@ -1,4 +1,4 @@
-# smider-personal
+# pirate-scroll
 
 ## Project setup
 ```
