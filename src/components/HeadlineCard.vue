@@ -1,38 +1,37 @@
 <template>
-  <v-card
-    max-width="400"
-    style="height:350px"
+  <div
+    style="height:350px; min-width:343px;"
+    class="bg-white rounded-md shadow-md flex flex-col"
   >
-    <v-img
-      class="white--text align-end"
+    <img
+      class="object-cover h-48 w-full rounded-t-md"
       height="200px"
       :src="src"
     >
-      <v-card-titles>
-        <div class="title oop text-pirate-black text-center py-1">
-          <h1> {{ title | lowercase }} </h1>
-        </div>
-      </v-card-titles>
-    </v-img>
 
-    <v-card-subtitle class="pb-0">
-      {{ subtitle }}
-    </v-card-subtitle>
+    <div class="title oop text-pirate-black text-center py-2 flex flex-row items-center justify-around">
+      <h1> {{ title | lowercase }} </h1>
+    </div>
 
-    <v-card-text class="text--primary">
-      <div>{{ text }}</div>
-    </v-card-text>
+    <div class="mx-4 my-2">
+      <div class="subtitle pb-0 text-gray-700">
+        {{ subtitle }}
+      </div>
 
-    <v-card-actions>
-      <v-btn text>
-        Share
-      </v-btn>
-
-      <v-btn text>
-        Preview
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+      <div class="low-text text-sm">
+        <div>{{ text }}</div>
+      </div>
+    </div>
+    <div class="mx-4 mt-2 flex flex-row justify-end">
+      <button
+        v-for="b in buttons"
+        :key="b"
+        class="ml-2"
+      >
+        <i :class="b" />
+      </button>
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -44,6 +43,15 @@ export default {
     }
   },
   props: ['title', 'subtitle', 'text', 'src'],
+  data() {
+    return {
+      buttons: [
+        'fab fa-twitter',
+        'fab fa-facebook-f',
+        'fas fa-share-square'
+      ]
+    }
+  }
 };
 </script>
 <style scoped>
@@ -55,11 +63,26 @@ export default {
     white 85%,
     var(--pirate-gold) 85%
   ) !important;
-  border-radius: 2px;
+}
+
+.subtitle {
+  @apply text-sm;
+}
+
+i {
+  @apply text-lg
 }
 
 h1 {
   font-family: PirateFont, Fallback, sans-serif !important;
   @apply text-sm;
+}
+
+button {
+  @apply px-1 py-1 rounded-sm
+}
+
+button:hover {
+  @apply text-pirate-gold
 }
 </style>

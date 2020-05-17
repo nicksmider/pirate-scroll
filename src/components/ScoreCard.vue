@@ -1,6 +1,9 @@
 <template>
-  <v-card min-width="225">
-    <v-card-text class="text--primary flex flex-row">
+  <div
+    style="min-width:200px"
+    class="bg-white px-4 py-2 rounded-md shadow-md"
+  >
+    <div class="flex flex-row">
       <div class="">
         <div>
           {{ home }}
@@ -25,8 +28,8 @@
           {{ outs }}
         </div>
       </div>
-    </v-card-text>
-  </v-card>
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -34,3 +37,9 @@ export default {
   props: ['home', 'away', 'home-score', 'away-score', 'inning', 'outs'],
 };
 </script>
+<style scoped>
+div {
+  font-family: sans-serif;
+  @apply text-sm
+}
+</style>

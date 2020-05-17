@@ -1,19 +1,13 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="white"
-      dark
-      class="header-gradient"
-    >
-      <div class="h-full w-full flex flex-row items-center">
-        <p class="text-xl text-white mb-0 header-font">
-          the pirate scroll
-        </p>
-      </div>
-    </v-app-bar>
+  <div>
+    <div class="header-gradient w-full flex flex-row items-center h-16 fixed z-50">
+      <p class="text-xl text-white mb-0 header-font px-4">
+        the pirate scroll
+      </p>
+    </div>
+    <div class="h-16" />
 
-    <v-content class="px-4 bg-gray-100 mb-5">
+    <div class="px-4 bg-gray-100 mb-5">
       <div class="flex flex-row my-wrap">
         <!--Articles-->
         <div class="flex-grow overflow-x-auto overflow-y-hidden pirates-scroll">
@@ -25,7 +19,7 @@
             </h1>
 
             <!--Content Holder-->
-            <div class="flex flex-row flex-no-wrap overflow-x-auto overflow-y-hidden pirates-scroll mr-5">
+            <div class="flex flex-row flex-no-wrap overflow-x-auto overflow-y-hidden pirates-scroll">
               <!--Content-->
               <HeadlineCard
                 v-for="card in cards.recent"
@@ -46,7 +40,7 @@
             </h1>
 
             <!--Content Holder-->
-            <div class="flex flex-row flex-no-wrap overflow-x-auto overflow-y-hidden pirates-scrol mr-5">
+            <div class="flex flex-row flex-no-wrap overflow-x-auto overflow-y-hidden pirates-scroll">
               <!--Content-->
               <HeadlineCard
                 v-for="card in reverse"
@@ -62,7 +56,7 @@
         </div>
 
         <!--Scores-->
-        <div class="my-overflow pirates-scroll">
+        <div class="my-overflow pirates-scroll ml-auto">
           <!--Title-->
           <h1 class="mt-5 text-xl mb-0 header-font">
             last 10
@@ -73,7 +67,7 @@
             <ScoreCard
               v-for="score in scores"
               :key="score"
-              class="mr-4 mt-2 mb-4"
+              class="mt-2 mb-4 my-right"
               :home="score.home"
               :away="score.away"
               :home-score="score.homeScore"
@@ -84,8 +78,8 @@
           </div>
         </div>
       </div>
-    </v-content>
-  </v-app>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -110,13 +104,13 @@ export default {
         },
         {
           title: 'Archer Trade Nullified',
-          subtitle: 'Falsified Medical Records Revealed',
-          text: 'Austin Meadows to report to Brandenton on Monday, Tyler Glasnow recovering from inner lip tattoo infection.',
+          subtitle: 'Falsified Medical Records!',
+          text: 'Austin Meadows to report to Brandenton on Monday.',
           src: 'https://cdn.theathletic.com/app/uploads/2020/04/12004921/USATSI_13255981-1024x683.jpg'
         },
         {
           title: '29 Teams Cheated',
-          subtitle: 'Pirates Retroactivly Crowned World Series Champs',
+          subtitle: 'Pirates Crowned World Series Champs',
           text: 'Neal Huntington is now the most decorated GM in baseball.',
           src: 'https://miro.medium.com/max/2600/1*RZTsoCeXc463-lJo4KmnjQ.jpeg'
         },
@@ -129,7 +123,7 @@ export default {
         {
           title: 'Best Catcher in Baseball?',
           subtitle: 'Move over JT Realmuto',
-          text: 'Jacob Stallings leads NL catchers in every statisical category.',
+          text: 'Jacob Stallings leads NL catchers in every statistical category.',
           src: 'https://www.gannett-cdn.com/-mm-/358b6e3f4eb3b9547386edab31a1c1ea0dbb8815/c=222-338-1996-1340/local/-/media/2016/09/24/USATODAY/USATODAY/636102774611025056-USP-MLB-WASHINGTON-NATIONALS-AT-PITTSBURGH-PIRATE-85451272.JPG?width=1774&height=1002&fit=crop&format=pjpg&auto=webp'
         }
       ],
@@ -244,8 +238,16 @@ h1 {
   );
 }
 
+.my-overflow {
+  @apply ml-2;
+}
+
 .my-wrap {
   flex-wrap: nowrap;
+}
+
+.my-right {
+  @apply mr-0;
 }
 
 @media (max-width: 600px) {
@@ -258,6 +260,11 @@ h1 {
   }
   .my-overflow {
     overflow-x: auto;
+    @apply ml-0;
+  }
+
+  .my-right {
+    @apply mr-4;
   }
 }
 
